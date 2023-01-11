@@ -1,3 +1,61 @@
 @startuml
-class Thread {}
+
+interface Thread {
+    bool Start()
+    void Stop()
+    bool IsRunning() const
+    void Join()
+    std::string_view GetThreadName() const
+    std::thread::id GetThreadId() const
+    std::shared_ptr<DispatchTask> GetDispatchTask()
+}
+
+interface TimeProvider {
+    TimestampMs Now() const
+}
+
+interface TaskLoop {
+    void Run()
+    void Stop()
+}
+
+interface TaskPump {
+    void WaitUntil(TimestampMs time)
+    void Notify()
+}
+
+struct TaskHandle {
+    weak_ptr<PendingTask> task
+}
+
+struct PendingTask {
+    Task task
+    size_t times
+    IntervalMs period
+    TimestampMs next_call
+}
+
+interface DispatchTask {
+    TaskHandle PostTask(Task task)
+    TaskHandle PostRepeatingTask(Task task, size_t times, IntervalMs period)
+    TaskHandle PostDelayedTask(Task task, IntervalMs delay)
+    void CancelTask(TaskHandle handle)
+}
+
+interface TaskQueue {
+    void AddTask(std::shared_ptr<PendingTask> task)
+    std::shared_ptr<PendingTask> PopTask()
+    bool IsEmpty() const
+    TimestampMs GetNextTaskCallTime() const
+}
+
+TaskLoop <|-- RunLoop
+DispatchTask <|-- RunLoop
+RunLoop o-- TaskQueue
+RunLoop o-- TaskPump
+RunLoop o-- TimeProvider
+TaskQueue -[dotted]-- PendingTask
+TaskHandle <--- PendingTask
+Thread <|-- MainThread
+MainThread *-- RunLoop
 @enduml
