@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-namespace rl {
+namespace rl_cpp {
 TaskHandle PriorityTaskQueue::AddTask(std::shared_ptr<PendingTask> task) {
   TaskHandle handle{task};
   queue_.push(std::move(task));
@@ -26,4 +26,4 @@ TimestampMs PriorityTaskQueue::GetNextTaskCallTime() const {
 
   return queue_.top()->next_call;
 }
-}  // namespace rl
+}  // namespace rl_cpp

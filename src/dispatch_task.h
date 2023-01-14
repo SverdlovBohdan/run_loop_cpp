@@ -2,7 +2,7 @@
 
 #include "task_handle.h"
 
-namespace rl {
+namespace rl_cpp {
 /**
  * @brief Task dispatcher interface.
  *
@@ -46,4 +46,4 @@ class DispatchTask {
    */
   virtual void CancelTask(TaskHandle&& handle) = 0;
 };
-}  // namespace rl
+}  // namespace rl_cpp

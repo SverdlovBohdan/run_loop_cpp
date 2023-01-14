@@ -9,7 +9,7 @@
 #include "steady_time_provider.h"
 #include "task_pump_std.h"
 
-namespace rl {
+namespace rl_cpp {
 class RunLoopTest : public ::testing::Test {
  protected:
   std::shared_ptr<TaskQueue> queue_ = std::make_shared<PriorityTaskQueue>();
@@ -70,4 +70,4 @@ TEST_F(RunLoopTest, CancelsTask) {
   run_loop_.Run();
   ASSERT_FALSE(is_executed);
 }
-}  // namespace rl
+}  // namespace rl_cpp

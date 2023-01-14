@@ -1,6 +1,6 @@
 #include "task_pump_std.h"
 
-namespace rl {
+namespace rl_cpp {
 void TaskPumpStd::Run(std::shared_ptr<DispatchTask>) {}
 
 void TaskPumpStd::WaitUntil(TimestampMs time) {
@@ -23,4 +23,4 @@ void TaskPumpStd::WaitUntilTime(std::unique_lock<std::mutex>& lock,
 }
 
 void TaskPumpStd::NotifyAll() { event_.notify_all(); }
-}  // namespace rl
+}  // namespace rl_cpp

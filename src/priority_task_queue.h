@@ -5,7 +5,7 @@
 
 #include "task_queue.h"
 
-namespace rl {
+namespace rl_cpp {
 /**
  * @brief Task call time priority queue.
  *
@@ -41,4 +41,4 @@ class PriorityTaskQueue : public TaskQueue {
                       PendignTaskPriorityComparator>
       queue_;
 };
-}  // namespace rl
+}  // namespace rl_cpp

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(multi_run_loops VERSION 0.1.0)
 
-option(ENABLE_TEST "Turn on to enable tests" ON)
+option(ENABLE_RUN_LOOP_UNIT_TESTS "Turn on to enable tests" ON)
 
 add_library(project_options INTERFACE)
 target_compile_features(project_options INTERFACE cxx_std_17)
@@ -16,6 +16,6 @@ target_compile_options(project_options INTERFACE
 
 add_subdirectory(src)
 
-if (ENABLE_TEST)
+if (ENABLE_RUN_LOOP_UNIT_TESTS)
     add_subdirectory(test)
 endif()

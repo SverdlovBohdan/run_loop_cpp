@@ -5,7 +5,7 @@
 #include "pending_task.h"
 #include "task_handle.h"
 
-namespace rl {
+namespace rl_cpp {
 /**
  * @brief Task queue interface.
  *
@@ -42,4 +42,4 @@ class TaskQueue {
    */
   virtual TimestampMs GetNextTaskCallTime() const = 0;
 };
-}  // namespace rl
+}  // namespace rl_cpp

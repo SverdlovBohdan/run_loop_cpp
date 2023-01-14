@@ -8,11 +8,15 @@
 #include "pending_task.h"
 #include "task_loop.h"
 
-namespace rl {
+namespace rl_cpp {
 class TaskPump;
 class TaskQueue;
 class TimeProvider;
 
+/**
+ * @brief Processes tasks for thread.
+ *
+ */
 class RunLoop : public TaskLoop, public DispatchTask {
  public:
   RunLoop(std::shared_ptr<TaskPump> task_pump,
@@ -51,4 +55,4 @@ class RunLoop : public TaskLoop, public DispatchTask {
   std::mutex task_quard_;
   std::atomic<bool> is_running_;
 };
-}  // namespace rl
+}  // namespace rl_cpp
