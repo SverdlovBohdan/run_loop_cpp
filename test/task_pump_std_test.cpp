@@ -2,7 +2,7 @@
 
 #include <gmock/gmock.h>
 
-namespace rl {
+namespace rl_cpp {
 using ::testing::_;
 
 class TestTaskPumpStd : public TaskPumpStd {
@@ -33,4 +33,4 @@ TEST_F(TaskPumpStdTest, NotifiesClient) {
   EXPECT_CALL(pump_, NotifyAll());
   pump_.Notify();
 }
-}  // namespace rl
+}  // namespace rl_cpp

@@ -4,7 +4,7 @@
 
 #include "time_types.h"
 
-namespace rl {
+namespace rl_cpp {
 class DispatchTask;
 
 /**
@@ -35,4 +35,4 @@ class TaskPump {
    */
   virtual void Notify() = 0;
 };
-}  // namespace rl
+}  // namespace rl_cpp

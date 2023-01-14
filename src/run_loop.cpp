@@ -6,7 +6,7 @@
 #include "task_queue.h"
 #include "time_provider.h"
 
-namespace rl {
+namespace rl_cpp {
 RunLoop::RunLoop(std::shared_ptr<TaskPump> task_pump,
                  std::shared_ptr<TaskQueue> task_queue,
                  std::shared_ptr<TimeProvider> time_provider)
@@ -107,4 +107,4 @@ void RunLoop::PostTask(std::shared_ptr<PendingTask>&& task) {
   pump_->Notify();
 }
 
-}  // namespace rl
+}  // namespace rl_cpp

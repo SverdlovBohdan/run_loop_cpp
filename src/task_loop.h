@@ -1,6 +1,6 @@
 #pragma once
 
-namespace rl {
+namespace rl_cpp {
 /**
  * @brief Message loop interface.
  *
@@ -21,4 +21,4 @@ class TaskLoop {
    */
   virtual void Stop() = 0;
 };
-}  // namespace rl
+}  // namespace rl_cpp

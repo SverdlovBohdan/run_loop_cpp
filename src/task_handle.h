@@ -4,7 +4,7 @@
 
 #include "pending_task.h"
 
-namespace rl {
+namespace rl_cpp {
 struct TaskHandle {
   TaskHandle() : TaskHandle{nullptr} {}
 
@@ -13,4 +13,4 @@ struct TaskHandle {
 
   std::weak_ptr<PendingTask> task;
 };
-}  // namespace rl
+}  // namespace rl_cpp

@@ -5,7 +5,7 @@
 #include "task_pump.h"
 #include "dispatch_task.h"
 
-namespace rl {
+namespace rl_cpp {
 /**
  * @brief Controls message pumping by c++ std.
  *
@@ -30,4 +30,4 @@ class TaskPumpStd : public TaskPump {
   std::condition_variable event_;
   std::mutex guard_;
 };
-}  // namespace rl
+}  // namespace rl_cpp

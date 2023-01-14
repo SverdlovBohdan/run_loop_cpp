@@ -6,7 +6,7 @@
 
 #include "pending_task.h"
 
-namespace rl {
+namespace rl_cpp {
 class PriorityTaskQueueTest : public ::testing::Test {
  protected:
   PriorityTaskQueue queue_;
@@ -41,4 +41,4 @@ TEST_F(PriorityTaskQueueTest, GetsNextTaskCallTime) {
   queue_.PopTask();
   ASSERT_EQ(TimestampMs{100}, queue_.GetNextTaskCallTime());
 }
-}  // namespace rl
+}  // namespace rl_cpp

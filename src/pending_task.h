@@ -6,7 +6,7 @@
 
 #include "time_types.h"
 
-namespace rl {
+namespace rl_cpp {
 using Task = std::function<void()>;
 
 /**
@@ -32,4 +32,4 @@ struct PendingTask {
   IntervalMs period;
   TimestampMs next_call;
 };
-}  // namespace rl
+}  // namespace rl_cpp

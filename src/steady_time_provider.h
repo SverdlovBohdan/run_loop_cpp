@@ -2,7 +2,7 @@
 
 #include "time_provider.h"
 
-namespace rl {
+namespace rl_cpp {
 /**
  * @brief Uses steady time.
  *
@@ -12,4 +12,4 @@ class SteadyTimeProvider : public TimeProvider {
   /** @see TimeProvider. */
   TimestampMs Now() const override;
 };
-}  // namespace rl
+}  // namespace rl_cpp

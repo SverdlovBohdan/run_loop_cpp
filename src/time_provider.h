@@ -2,7 +2,7 @@
 
 #include "time_types.h"
 
-namespace rl {
+namespace rl_cpp {
 /**
  * @brief Provides now timestamp
  *
@@ -18,4 +18,4 @@ class TimeProvider {
    */
   virtual TimestampMs Now() const = 0;
 };
-}  // namespace rl
+}  // namespace rl_cpp
